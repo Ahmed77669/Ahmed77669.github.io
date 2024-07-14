@@ -24,9 +24,9 @@
         width: 1440px;
         height: 900px;
         background-color: hsl(275, 100%, 97%);
-        justify-content: top;
         display: flex;
         flex-direction: column;
+        align-items: center;
       }
 
       .app {
@@ -74,6 +74,15 @@
         font-weight: 400;
         border: none;
         border-radius: 15px;
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+      }
+
+      .p1.visible {
+        max-height: 120px;
+        opacity: 1;
       }
 
       .P_content:hover {
@@ -88,95 +97,98 @@
       let d = 0;
 
       function description1() {
+        const Element = document.getElementById("description1");
         if (v == 1) {
-          const Element = document.getElementById("description1");
-          if (Element.style.display === "none") {
-            Element.style.display = "block";
+          if (Element.classList.contains("visible")) {
+            Element.classList.remove("visible");
           } else {
-            Element.style.display = "none";
+            Element.classList.add("visible");
           }
-          return 0;
+          return;
         }
 
         const container = document.getElementById("first");
-        const Element = document.createElement("p");
+        const newElement = document.createElement("p");
         const content = document.createTextNode(
           "Website presents Online Arabic programming courses and online computer science courses in a fun and easy style. Watch high-quality online computer programming courses."
         );
-        Element.appendChild(content);
-        Element.className = "p1";
-        Element.id = "description1";
-        container.appendChild(Element);
+        newElement.appendChild(content);
+        newElement.className = "p1 visible";
+        newElement.id = "description1";
+        container.appendChild(newElement);
         v = 1;
       }
 
       function description2() {
+        const Element = document.getElementById("description2");
         if (a == 1) {
-          const Element = document.getElementById("description2");
-          if (Element.style.display === "none") {
-            Element.style.display = "block";
+          if (Element.classList.contains("visible")) {
+            Element.classList.remove("visible");
           } else {
-            Element.style.display = "none";
+            Element.classList.add("visible");
           }
-          return 0;
+          return;
         }
 
         const container = document.getElementById("second");
-        const Element = document.createElement("p");
+        const newElement = document.createElement("p");
         const content = document.createTextNode(
           "44 Tout Ankh Amoun, Street, Alexandria Governorate."
         );
-        Element.appendChild(content);
-        Element.className = "p1";
-        Element.id = "description2";
-        container.appendChild(Element);
+        newElement.appendChild(content);
+        newElement.className = "p1 visible";
+        newElement.id = "description2";
+        container.appendChild(newElement);
         a = 1;
       }
+
       function description3() {
+        const Element = document.getElementById("description3");
         if (c == 1) {
-          const Element = document.getElementById("description3");
-          if (Element.style.display === "none") {
-            Element.style.display = "block";
+          if (Element.classList.contains("visible")) {
+            Element.classList.remove("visible");
           } else {
-            Element.style.display = "none";
+            Element.classList.add("visible");
           }
-          return 0;
+          return;
         }
 
         const container = document.getElementById("third");
-        const Element = document.createElement("p");
+        const newElement = document.createElement("p");
         const content = document.createTextNode(
           "The content offered by Gammal Tech includes a diverse range of core and elective courses designed to enhance skills in programming, data structures, algorithms, object-oriented programming (OOP), entrepreneurship, UI & UX design, Dart, Flutter, HTML, Python, CSS, GTK, JavaScript, and masterclasses. Each course provides access for 4 months and is priced accordingly, aiming to cater to various interests and skill levels."
         );
-        Element.appendChild(content);
-        Element.className = "p1";
-        Element.id = "description3";
-        container.appendChild(Element);
+        newElement.appendChild(content);
+        newElement.className = "p1 visible";
+        newElement.id = "description3";
+        container.appendChild(newElement);
         c = 1;
       }
+
       function description4() {
+        const Element = document.getElementById("description4");
         if (d == 1) {
-          const Element = document.getElementById("description4");
-          if (Element.style.display === "none") {
-            Element.style.display = "block";
+          if (Element.classList.contains("visible")) {
+            Element.classList.remove("visible");
           } else {
-            Element.style.display = "none";
+            Element.classList.add("visible");
           }
-          return 0;
+          return;
         }
 
         const container = document.getElementById("fourth");
-        const Element = document.createElement("p");
+        const newElement = document.createElement("p");
         const content = document.createTextNode(
           "The address is 44 Tout Ankh Amoun St., Alexandria, Egypt, phone number is +201033998844, and email is info@gammal.tech."
         );
-        Element.appendChild(content);
-        Element.className = "p1";
-        Element.id = "description4";
-        container.appendChild(Element);
+        newElement.appendChild(content);
+        newElement.className = "p1 visible";
+        newElement.id = "description4";
+        container.appendChild(newElement);
         d = 1;
       }
-      function switchSvg(id1 , id2) {
+
+      function switchSvg(id1, id2) {
         var x = document.getElementById(id1);
         var y = document.getElementById(id2);
 
@@ -188,7 +200,6 @@
           y.style.display = "block";
         }
       }
-      
     </script>
   </head>
 
@@ -277,7 +288,6 @@
                 </svg>
               </div>
             </div>
-            <hr />
             <div id="second">
               <div
                 style="
@@ -289,9 +299,9 @@
                 <p
                   style="font-family: Work Sans"
                   class="P_content"
-                  onclick="description2();switchSvg('svg2','svg2_')"
+                  onclick="description2();switchSvg('svg2','svg2_');"
                 >
-                  Where is Headquarters of Gammal Tech
+                  Where is it located
                 </p>
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -301,33 +311,32 @@
                 viewBox="0 0 30 31"
                 class="plus"
                 style="margin-right: 6px"
-                id='svg2';
-                onclick="description2(); switchSvg('svg2','svg2_')"
+                id="svg2"
+                onclick="description2(); switchSvg('svg2', 'svg2_');"
               >
                 <path
                   fill="#AD28EB"
                   d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"
                 />
               </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="31"
-                  fill="none"
-                  viewBox="0 0 30 31"
-                  class="minus"
-                  style="display: none; margin-right: 6px;"
-                  id="svg2_"
-                  onclick="description2(); switchSvg('svg2','svg2_')"
-                >
-                  <path
-                    fill="#301534"
-                    d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
-                  />
-                </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="31"
+                fill="none"
+                viewBox="0 0 30 31"
+                class="minus"
+                style="display: none; margin-right: 6px;"
+                id="svg2_"
+                onclick="description2(); switchSvg('svg2', 'svg2_');"
+              >
+                <path
+                  fill="#301534"
+                  d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
+                />
+              </svg>
               </div>
             </div>
-            <hr />
             <div id="third">
               <div
                 style="
@@ -339,48 +348,46 @@
                 <p
                   style="font-family: Work Sans"
                   class="P_content"
-                  onclick="description3(); switchSvg('svg3','svg3_');"
+                  onclick="description3();switchSvg('svg3','svg3_');"
                 >
-                  What is Content of Gammal Tech
+                  What courses does it offer
                 </p>
 
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="31"
-                    fill="none"
-                    viewBox="0 0 30 31"
-                    class="plus"
-                    id="svg3"
-                    style="margin-right: 6px;"
-                    onclick="description3(); switchSvg('svg3','svg3_');"
-                  >
-                    <path
-                      fill="#AD28EB"
-                      d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"
-                    />
-                  </svg>
-                
-                  <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="31"
-                  fill="none"
-                  viewBox="0 0 30 31"
-                  class="minus"
-                  style="display: none; margin-right: 6px;"
-                  id="svg3_"
-                  onclick="description3(); switchSvg('svg3','svg3_');"
-                >
-                  <path
-                    fill="#301534"
-                    d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
-                  />
-                </svg>
-
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="31"
+                fill="none"
+                viewBox="0 0 30 31"
+                class="plus"
+                id="svg3"
+                style="margin-right: 6px;"
+                onclick="description3(); switchSvg('svg3','svg3_');"
+              >
+                <path
+                  fill="#AD28EB"
+                  d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"
+                />
+              </svg>
+            
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="31"
+              fill="none"
+              viewBox="0 0 30 31"
+              class="minus"
+              style="display: none; margin-right: 6px;"
+              id="svg3_"
+              onclick="description3(); switchSvg('svg3','svg3_');"
+            >
+              <path
+                fill="#301534"
+                d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"
+              />
+            </svg>
               </div>
             </div>
-            <hr />
             <div id="fourth">
               <div
                 style="
@@ -392,10 +399,11 @@
                 <p
                   style="font-family: Work Sans"
                   class="P_content"
-                  onclick="description4(); switchSvg('svg4','svg4_')"
+                  onclick="description4();switchSvg('svg4','svg4_');"
                 >
-                  How I can Contact them
+                  How i can contact them
                 </p>
+
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -430,6 +438,8 @@
               />
             </svg>
               </div>
+            </div>
+
             </div>
           </div>
         </div>
