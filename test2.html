@@ -90,117 +90,106 @@
         cursor: pointer;
       }
     </style>
-    <script>
-      let v = 0;
-      let a = 0;
-      let c = 0;
-      let d = 0;
+ <script>
+  function description1() {
+    const element = document.getElementById("description1");
+    if (element) {
+      element.classList.toggle("visible");
+    } else {
+      const container = document.getElementById("first");
+      const newElement = document.createElement("p");
+      const content = document.createTextNode(
+        "Website presents Online Arabic programming courses and online computer science courses in a fun and easy style. Watch high-quality online computer programming courses."
+      );
+      newElement.appendChild(content);
+      newElement.className = "p1"; 
+      newElement.id = "description1";
+      container.appendChild(newElement);
 
-      function description1() {
-        const Element = document.getElementById("description1");
-        if (v == 1) {
-          if (Element.classList.contains("visible")) {
-            Element.classList.remove("visible");
-          } else {
-            Element.classList.add("visible");
-          }
-          return;
-        }
+      newElement.offsetHeight; 
 
-        const container = document.getElementById("first");
-        const newElement = document.createElement("p");
-        const content = document.createTextNode(
-          "Website presents Online Arabic programming courses and online computer science courses in a fun and easy style. Watch high-quality online computer programming courses."
-        );
-        newElement.appendChild(content);
-        newElement.className = "p1 visible";
-        newElement.id = "description1";
-        container.appendChild(newElement);
-        v = 1;
-      }
 
-      function description2() {
-        const Element = document.getElementById("description2");
-        if (a == 1) {
-          if (Element.classList.contains("visible")) {
-            Element.classList.remove("visible");
-          } else {
-            Element.classList.add("visible");
-          }
-          return;
-        }
+      newElement.classList.add("visible");
+    }
+  }
 
-        const container = document.getElementById("second");
-        const newElement = document.createElement("p");
-        const content = document.createTextNode(
-          "44 Tout Ankh Amoun, Street, Alexandria Governorate."
-        );
-        newElement.appendChild(content);
-        newElement.className = "p1 visible";
-        newElement.id = "description2";
-        container.appendChild(newElement);
-        a = 1;
-      }
 
-      function description3() {
-        const Element = document.getElementById("description3");
-        if (c == 1) {
-          if (Element.classList.contains("visible")) {
-            Element.classList.remove("visible");
-          } else {
-            Element.classList.add("visible");
-          }
-          return;
-        }
+  function description2() {
+    const element = document.getElementById("description2");
+    if (element) {
+      element.classList.toggle("visible");
+    } else {
+      const container = document.getElementById("second");
+      const newElement = document.createElement("p");
+      const content = document.createTextNode(
+        "44 Tout Ankh Amoun, Street, Alexandria Governorate."
+      );
+      newElement.appendChild(content);
+      newElement.className = "p1"; 
+      newElement.id = "description2";
+      container.appendChild(newElement);
 
-        const container = document.getElementById("third");
-        const newElement = document.createElement("p");
-        const content = document.createTextNode(
-          "The content offered by Gammal Tech includes a diverse range of core and elective courses designed to enhance skills in programming, data structures, algorithms, object-oriented programming (OOP), entrepreneurship, UI & UX design, Dart, Flutter, HTML, Python, CSS, GTK, JavaScript, and masterclasses. Each course provides access for 4 months and is priced accordingly, aiming to cater to various interests and skill levels."
-        );
-        newElement.appendChild(content);
-        newElement.className = "p1 visible";
-        newElement.id = "description3";
-        container.appendChild(newElement);
-        c = 1;
-      }
+      newElement.offsetHeight;
 
-      function description4() {
-        const Element = document.getElementById("description4");
-        if (d == 1) {
-          if (Element.classList.contains("visible")) {
-            Element.classList.remove("visible");
-          } else {
-            Element.classList.add("visible");
-          }
-          return;
-        }
+  
+      newElement.classList.add("visible");
+    }
+  }
 
-        const container = document.getElementById("fourth");
-        const newElement = document.createElement("p");
-        const content = document.createTextNode(
-          "The address is 44 Tout Ankh Amoun St., Alexandria, Egypt, phone number is +201033998844, and email is info@gammal.tech."
-        );
-        newElement.appendChild(content);
-        newElement.className = "p1 visible";
-        newElement.id = "description4";
-        container.appendChild(newElement);
-        d = 1;
-      }
+  function description3() {
+    const element = document.getElementById("description3");
+    if (element) {
+      element.classList.toggle("visible");
+    } else {
+      const container = document.getElementById("third");
+      const newElement = document.createElement("p");
+      const content = document.createTextNode(
+        "The content offered by Gammal Tech includes a diverse range of core and elective courses designed to enhance skills in programming, data structures, algorithms, object-oriented programming (OOP), entrepreneurship, UI & UX design, Dart, Flutter, HTML, Python, CSS, GTK, JavaScript, and masterclasses. Each course provides access for 4 months and is priced accordingly, aiming to cater to various interests and skill levels."
+      );
+      newElement.appendChild(content);
+      newElement.className = "p1"; 
+      newElement.id = "description3";
+      container.appendChild(newElement);
 
-      function switchSvg(id1, id2) {
-        var x = document.getElementById(id1);
-        var y = document.getElementById(id2);
+      newElement.offsetHeight; 
 
-        if (x.style.display === "none") {
-          x.style.display = "block";
-          y.style.display = "none";
-        } else {
-          x.style.display = "none";
-          y.style.display = "block";
-        }
-      }
-    </script>
+      newElement.classList.add("visible");
+    }
+  }
+
+  function description4() {
+    const element = document.getElementById("description4");
+    if (element) {
+      element.classList.toggle("visible");
+    } else {
+      const container = document.getElementById("fourth");
+      const newElement = document.createElement("p");
+      const content = document.createTextNode(
+        "The address is 44 Tout Ankh Amoun St., Alexandria, Egypt, phone number is +201033998844, and email is info@gammal.tech."
+      );
+      newElement.appendChild(content);
+      newElement.className = "p1"; 
+      newElement.id = "description4";
+      container.appendChild(newElement);
+
+      newElement.offsetHeight;
+
+      newElement.classList.add("visible");
+    }
+  }
+    function switchSvg(id1, id2) {
+    var x = document.getElementById(id1);
+    var y = document.getElementById(id2);
+
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+    } else {
+      x.style.display = "none";
+      y.style.display = "block";
+    }
+  }
+  </script>
   </head>
   <body>
     <div class="container">
